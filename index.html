@@ -1,0 +1,59 @@
+<div id="tableContainer"></div>
+<style>
+    #tableContainer table{
+      margin: 0;
+      width: 100%
+    }
+  </style>
+  
+  <script>
+      function createTable() {
+        // Create a table element
+        var table = document.createElement('table');
+  
+        // Create table headings
+        var thead = table.createTHead();
+        var row = thead.insertRow();
+        var th1 = document.createElement('th');
+        th1.textContent = 'Language';
+        row.appendChild(th1);
+        var th2 = document.createElement('th');
+        th2.textContent = 'Code';
+        row.appendChild(th2);
+  
+        // Content for first and second columns
+        var languages = [
+            "Amharic", "Arabic", "Basque", "Bengali", "English (UK)", "Portuguese (Brazil)",
+            "Bulgarian", "Catalan", "Cherokee", "Croatian", "Czech", "Danish", "Dutch",
+            "English (US)", "Estonian", "Filipino", "Finnish", "French", "German", "Greek",
+            "Gujarati", "Hebrew", "Hindi", "Hungarian", "Icelandic", "Indonesian", "Italian",
+            "Japanese", "Kannada", "Korean", "Latvian", "Lithuanian", "Malay", "Malayalam",
+            "Marathi", "Norwegian", "Polish", "Portuguese (Portugal)", "Romanian", "Russian",
+            "Serbian", "Chinese (PRC)", "Slovak", "Slovenian", "Spanish", "Swahili", "Swedish",
+            "Tamil", "Telugu", "Thai", "Chinese (Taiwan)", "Turkish", "Urdu", "Ukrainian",
+            "Vietnamese", "Welsh"
+        ];
+  
+        var codes = [
+            "am", "ar", "eu", "bn", "en-GB", "pt-BR", "bg", "ca", "chr", "hr", "cs", "da", "nl",
+            "en", "et", "fil", "fi", "fr", "de", "el", "gu", "iw", "hi", "hu", "is", "id", "it",
+            "ja", "kn", "ko", "lv", "lt", "ms", "ml", "mr", "no", "pl", "pt-PT", "ro", "ru", "sr",
+            "zh-CN", "sk", "sl", "es", "sw", "sv", "ta", "te", "th", "zh-TW", "tr", "ur", "uk", "vi", "cy"
+        ];
+  
+        // Create table rows and cells
+        for (var i = 0; i < languages.length; i++) {
+            var row = table.insertRow();
+            var cell1 = row.insertCell();
+            var cell2 = row.insertCell();
+            cell1.textContent = languages[i];
+            cell2.textContent = codes[i];
+        }
+  
+        // Append the table to the container div
+        document.getElementById('tableContainer').appendChild(table);
+    }
+  
+    // Call the function to create the table
+    createTable();
+  </script>
